@@ -4,11 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Aposta {
     private Date dataAposta;
     private List<Integer> dezenas = new ArrayList<Integer>();
 
+    @JsonIgnore
     private final Integer maxDezenas;
+    @JsonIgnore
     private final Integer maxRangeApostas;
 
     public Aposta(Integer maxDezenas, Integer maxRangeApostas) {
