@@ -1,12 +1,12 @@
 package com.tsswebapps.tssapostasapi.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Aposta {
-    private Long id;
     private Date dataAposta;
-    private List<Integer> dezenas;
+    private List<Integer> dezenas = new ArrayList<Integer>();
 
     private final Integer maxDezenas;
     private final Integer maxRangeApostas;
@@ -24,14 +24,6 @@ public class Aposta {
         return maxRangeApostas;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Date getDataAposta() {
         return dataAposta;
     }
@@ -42,6 +34,10 @@ public class Aposta {
 
     public List<Integer> getDezenas() {
         return List.copyOf(this.dezenas);
+    }
+    
+    public void setDezenas(List<Integer> aposta) {
+    	this.dezenas = aposta;
     }
 
     @Override
