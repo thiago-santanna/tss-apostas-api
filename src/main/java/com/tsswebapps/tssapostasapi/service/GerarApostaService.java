@@ -35,8 +35,9 @@ public class GerarApostaService {
 		List<Integer> jogo = new ArrayList<>();
 
 		for (int i = 0; i < maxDezenas; i++) {
-			double dezenaAleatoria = Math.random() * maxRangeDezenas;
-			jogo.add((int) Math.round(dezenaAleatoria));
+			double dezenaAleatoria = Math.round((Math.random() * maxRangeDezenas));
+			dezenaAleatoria = (dezenaAleatoria == 0) ? dezenaAleatoria = 1 : dezenaAleatoria;
+			jogo.add((int) dezenaAleatoria);
 		}
 
 		return jogo;
